@@ -1,4 +1,5 @@
-This project is an end-to-end system for automatically generating diagnostic reports from medical images (e.g., X-rays, CT scans). It uses deep learning for image classification and a Flask-based backend, integrated with a frontend interface for uploading images and downloading PDF reports. It also includes a chatbot that assists with disease prediction and provides precautions based on symptoms.
+This project is an end-to-end system for automatically generating diagnostic reports from medical images (e.g., X-rays, CT scans). It uses deep learning for image and body part classification, predicts diseases, and features a Flask-based backend integrated with a frontend interface for uploading images and downloading PDF reports. It also includes a chatbot that assists with disease prediction and provides relevant precautions based on user-reported symptoms.
+
  Key Features:
  
 Scan Type Detection (e.g., X-ray, CT)
