@@ -19,12 +19,12 @@ Frontend for user interaction
 
 Tech Stack:
 
-Layer   	Technology
-Frontend	HTML, CSS, TypeScript (under src/)
-Backend 	Python, Flask (app1.py, app2.py)
-Models	  PyTorch (saved model files)
-Assets	  Images stored under public/
-PDF Tool	jsPDF (frontend) 
+
+Frontend	:HTML, CSS, TypeScript (under src/),
+Backend :	Python, Flask (app1.py, app2.py),
+Models	 : PyTorch (saved model files),
+Assets	 : Images stored under public/,
+PDF Tool	:jsPDF (frontend) .
 
 
 Project Structure:
