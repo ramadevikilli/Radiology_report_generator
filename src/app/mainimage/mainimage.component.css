@@ -1,0 +1,59 @@
+/* Scrollable container */
+.scroll-content {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;      /* Center vertically (optional) */
+    height: 100%;             /* Optional: needed if you want vertical centering */
+    gap: 15px;
+}
+
+
+
+/* Individual card styling */
+.card {
+    flex: 0 0 auto;
+    width: 400px; 
+    min-height: 250px; /* Ensures enough space for description */
+    text-align: center;
+    border: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Hover effect */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Image styling */
+.img-fluid {
+    height: 150px;  /* Adjust based on your preference */
+    object-fit: cover;
+}
+
+/* Description text inside container */
+.description-text {
+    font-size: 14px;
+    color: #6c757d;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5; /* Ensures text wraps to 3 lines max */
+    -webkit-box-orient: vertical;
+    padding: 5px;
+}
+
+/* Ensures text doesn't go out of bounds */
+.card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+

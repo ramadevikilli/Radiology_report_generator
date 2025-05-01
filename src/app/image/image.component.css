@@ -1,0 +1,71 @@
+/* Upload Container */
+.upload-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  /* Upload Card */
+  .upload-card {
+    background: #1e1e2f;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* File Upload Box */
+  .upload-box {
+    width: 100%;
+    padding: 30px;
+    background: #28293e;
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .upload-box:hover {
+    background: #34354a;
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  /* Upload Icon and Label */
+  .upload-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  /* Image Preview */
+  .image-preview {
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .preview-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .preview-img:hover {
+    transform: scale(1.04);
+  }
+  
+  /* Clear & Submit Buttons */
+  .btn-outline-warning {
+    border: 2px solid #ffc107;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .btn-outline-warning:hover {
+    background: #ffc107;
+    color: black;
+  }
+  
+  .btn-success {
+    font-weight: bold;
+  }
+  

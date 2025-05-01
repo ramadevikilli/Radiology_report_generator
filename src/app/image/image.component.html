@@ -1,0 +1,61 @@
+<div class="container mt-5">
+  <div class="upload-container">
+    <h2 class="text-center text-white fw-bold">Upload Image for Analysis</h2>
+
+    <div class="card shadow-lg upload-card">
+      <div class="card-body text-center">
+        <h4 class="text-light">Upload Image for Report Generation: </h4>
+        <h5 class="text-light">please upload images related to brain,bone,chest,Alzheimer,knee body parts</h5>
+        <!-- File Upload -->
+        <div class="upload-box mt-3">
+          <input type="file" id="fileInput" class="form-control" (change)="onFileSelected($event)" accept="image/*">
+        </div>
+
+        <!-- Image Preview -->
+        <div *ngIf="imageUrl" class="mt-3">
+          <h5 class="text-light">Selected Image</h5>
+          <img [src]="imageUrl" alt="Uploaded Image" class="preview-img rounded shadow" height="300" width="300">
+
+          <div class="mt-3">
+            <button class="btn btn-outline-warning me-2" (click)="clearImage()">Clear</button>
+            <button class="btn btn-success" (click)="submitImage()" [disabled]="!imageUrl">Submit</button>
+          </div>
+        </div>
+
+        <!-- Display Report -->
+<div class="row mt-4" *ngIf="reportText && reportText !== 'Generating report... Please wait.'">
+  <div class="col-md-12 d-flex justify-content-center">
+    <!-- Report Text -->
+    <div class="col-md-6">
+      <h4 class="text-info text-center">Diagnostic Report</h4>
+      
+      <!-- Uploaded Image -->
+      <div class="col-md-12 text-center">
+        <h5 class="text-light">Uploaded Image</h5>
+        <img [src]="imageUrl" alt="Uploaded Image" class="preview-img rounded shadow" height="300" width="300">
+      </div>
+
+      <div class="card bg-dark p-3 text-light">
+        <pre class="text-light text-start">{{ reportText }}</pre>
+      </div>
+      <div class="card bg-dark p-3 text-light">
+        <p *ngIf="scanType!=='please upload correct xray/ctscan'"  class="text-light text-start">`Based on the analysis of the provided image, the model predicts the presence of {{prediction}} in the {{bodyPart}} scan. 
+          Please consult a radiologist for clinical confirmation and next steps.</p>
+          <p> This report is system-generated and must be reviewed by a licensed radiologist.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+        <!-- Download Button -->
+        <div *ngIf="reportText && reportText !== 'Generating report... Please wait.'" class="text-center mt-3">
+          <button class="btn btn-outline-info" (click)="downloadReport()">Download Report as PDF</button>
+        </div>
+
+        <!-- Back Button -->
+        <button class="btn btn-outline-light mt-4" (click)="goBack()">Back</button>
+      </div>
+    </div>
+  </div>
+</div>

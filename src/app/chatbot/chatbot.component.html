@@ -1,0 +1,26 @@
+<!-- AI Chatbot Toggle Button -->
+<button class="ai-toggle-btn" (click)="toggleChat()">AI Assist</button>
+
+<!-- Chatbot Container (Initially Hidden) -->
+<div class="chatbot-container" [ngClass]="{'show-chat': isChatVisible}">
+    <div class="chat-header">
+        <div class="user-info">
+            <img src="assets/avatar.png" alt="Avatar" class="avatar">
+            <div>
+                <p class="status">We are online!</p>
+            </div>
+        </div>
+        <button class="menu-btn" (click)="toggleChat()">x</button> <!-- Close Button -->
+    </div>
+
+    <div class="chat-body">
+        <div *ngFor="let message of messages" [ngClass]="{'user-message': message.sender === 'user', 'bot-message': message.sender === 'bot'}">
+            {{ message.text }}
+        </div>
+    </div>
+
+    <div class="chat-footer">
+        <input type="text" [(ngModel)]="userInput" placeholder="Enter your message..." class="chat-input" (keyup.enter)="sendMessage()">
+        <button class="send-btn" (click)="sendMessage()">➤</button>
+    </div>
+</div>

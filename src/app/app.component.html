@@ -1,0 +1,116 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">Rad AI </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Resources</a></li>
+        <li class="nav-item">
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signupModal">
+            Sign Up
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!--  Section -->
+<header class="hero-section text-light text-center">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h1>Revolutionize Workflows with Powerful Radiology AI</h1>
+        <p class="lead">
+          Empowering physicians with best-in-class AI radiology solutions to save time, reduce burnout, and improve patient care.
+        </p>
+        <button class="btn btn-info" (click)="requestdemo()">
+          Request Demo
+        </button>
+        
+        
+        
+      </div>
+      <div class="col-lg-6">
+        
+        <div id ="image"></div>
+
+        <app-chatbot></app-chatbot>
+
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Angular Router Outlet -->
+<router-outlet></router-outlet>
+
+<!-- Modal for Sign Up -->
+<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title  text-primary" id="signupModalLabel">Sign Up</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="border rounded p-4">
+          <div class="mb-3">
+            <label class="form-label">First Name*</label>
+            <input required #firstname="ngModel" class="form-control" type="text" name="firstname" [(ngModel)]="employee.firstname">
+            <div *ngIf="firstname.invalid && firstname.touched || firstname.dirty">
+              <div class="text-danger" *ngIf="firstname.errors?.['required']">First name is required</div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Last Name*</label>
+            <input required #lastname="ngModel" class="form-control" type="text" name="lastname" [(ngModel)]="employee.lastname">
+            <div *ngIf="lastname.invalid && lastname.touched || lastname.dirty">
+              <div class="text-danger" *ngIf="lastname.errors?.['required']">Last name is required</div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Email*</label>
+            <input required email #email="ngModel" class="form-control" type="email" name="email" [(ngModel)]="employee.email">
+            <div *ngIf="email.invalid && email.touched || email.dirty">
+              <div class="text-danger" *ngIf="email.errors?.['required']">Email is required</div>
+              <div class="text-danger" *ngIf="email.errors?.['email']">Email is invalid</div>
+              <div class="text-danger mt-2" *ngIf="message">{{ message }}</div>
+
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Phone*</label>
+            <input required #phone="ngModel" class="form-control" type="tel" name="phone" [(ngModel)]="employee.phone">
+            <div *ngIf="phone.invalid && phone.touched || phone.dirty">
+              <div class="text-danger" *ngIf="phone.errors?.['required']">Phone number is required</div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Password*</label>
+            <input required #password="ngModel" class="form-control" type="text" name="position" [(ngModel)]="employee.password">
+            <div *ngIf="password.invalid &&password.touched || password.dirty">
+              <div class="text-danger" *ngIf="password.errors?.['required']">Position is required</div>
+            </div>
+          </div>
+          <div class="d-grid">
+            <button class="btn btn-primary" type="submit" (click)="submit()">Sign Up</button>
+          </div>
+          <div>
+            Already have a account<a href="/login">login</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="text-center bg-dark text-light py-5">
+  <p>&copy; 2025 Rad AI Clone. All rights reserved.</p>
+</footer>
+
