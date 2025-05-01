@@ -1,6 +1,4 @@
-This project is an end-to-end system for automatically generating diagnostic reports from medical images (e.g., X-rays, CT scans). 
-It uses deep learning for classification and a Flask-based backend, integrated with a frontend interface for uploading images and downloading PDF reports.
-
+This project is an end-to-end system for automatically generating diagnostic reports from medical images (e.g., X-rays, CT scans). It uses deep learning for image classification and a Flask-based backend, integrated with a frontend interface for uploading images and downloading PDF reports. It also includes a chatbot that assists with disease prediction and provides precautions based on symptoms.
  Key Features:
  
 Scan Type Detection (e.g., X-ray, CT)
@@ -21,7 +19,7 @@ Tech Stack:
 
 
 Frontend	:HTML, CSS, TypeScript (under src/),
-Backend :	Python, Flask (app1.py, app2.py),
+Backend :	Python, Flask (app1.py, app2.py,chatbot.py),
 Models	 : PyTorch (saved model files),
 Assets	 : Images stored under public/,
 PDF Tool	:jsPDF (frontend) .
@@ -40,6 +38,7 @@ Radiology_report_generator/
 │
 ├── app1.py                  # Flask API for scan type & body part classification
 ├── app2.py                  # Flask API for storing and retrieving data from a database
+|__ chatbot.py               # Flask API for chatbot
 │
 ├── bone_10                  # Trained model (bone scan classification)
 ├── boneknee_20              # Trained model for knee-related conditions
