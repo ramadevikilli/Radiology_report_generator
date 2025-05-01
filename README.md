@@ -35,20 +35,21 @@ Radiology_report_generator/
 ├── public/                  # Public assets used in the frontend (e.g., images, icons)
 │   └── ...
 │
-├── src/                     # Frontend source code (likely TypeScript/HTML/CSS)
+├── src/                     # Frontend source code (TypeScript/HTML/CSS)
 │   └── ...
 │
 ├── app1.py                  # Flask API for scan type & body part classification
-├── app2.py                  # Flask API for storing and retrieving data from a database.
+├── app2.py                  # Flask API for storing and retrieving data from a database
 │
-├── bone_10                  # Trained model (likely for bone-related scan classification)
+├── bone_10                  # Trained model (bone scan classification)
 ├── boneknee_20              # Trained model for knee-related conditions
 ├── class_2                  # Scan/body part classifier model
 ├── model_16                 # Disease prediction model
-├── modelalzhe_4             # Model for Alzheimer's detection (likely from brain scans)
+├── modelalzhe_4             # Model for Alzheimer's detection (brain scans)
 ├── modelchest_19            # Model for chest X-ray diagnosis (e.g., pneumonia)
 ├── modelmain_3              # Combined/multi-purpose model
 │
-└── README.md                # Project documentation (to be created/updated)
+└── README.md                # Project documentation (this file)
+
 
 
